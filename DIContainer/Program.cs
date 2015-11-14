@@ -1,6 +1,11 @@
 ﻿using System;
+using System.IO;
 using System.Linq;
 using DIContainer.Commands;
+using Ninject;
+using Ninject.Extensions.Conventions;
+using FakeItEasy.Configuration;
+
 
 namespace DIContainer
 {
@@ -18,11 +23,20 @@ namespace DIContainer
 
         static void Main(string[] args)
         {
-            var arguments = new CommandLineArgs(args);
-            var printTime = new PrintTimeCommand();
-            var timer = new TimerCommand(arguments);
-            var commands = new ICommand[] { printTime, timer };
-            new Program(arguments, commands).Run();
+            var container = new StandardKernel();
+            container.Bind<CommandLineArgs>()
+                .ToSelf()
+//                .WithConstructorArgument(new[] { "printTime" });
+//                .WithConstructorArgument(new[] { "timer", "5000" });
+                .WithConstructorArgument(new[] { "help" });
+            container.Bind(x =>
+            {
+                x.FromThisAssembly()
+                    .SelectAllClasses()
+                    .BindDefaultInterfaces();
+            });
+            container.Bind<TextWriter>().ToConstant(Console.Out);
+            container.Get<Program>().Run();
         }
 
         public void Run()

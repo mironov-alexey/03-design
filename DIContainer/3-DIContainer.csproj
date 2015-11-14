@@ -36,8 +36,9 @@
     <Reference Include="Castle.Core">
       <HintPath>..\packages\Castle.Core.3.2.0\lib\net45\Castle.Core.dll</HintPath>
     </Reference>
-    <Reference Include="FakeItEasy">
-      <HintPath>..\packages\FakeItEasy.1.25.2\lib\net40\FakeItEasy.dll</HintPath>
+    <Reference Include="FakeItEasy, Version=1.25.3.0, Culture=neutral, PublicKeyToken=eff28e2146d5fd2c, processorArchitecture=MSIL">
+      <HintPath>..\packages\FakeItEasy.1.25.3\lib\net40\FakeItEasy.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="Ninject">
       <HintPath>..\packages\Ninject.3.2.3-unstable-012\lib\net45-full\Ninject.dll</HintPath>
@@ -63,6 +64,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CommandLineArgs.cs" />
+    <Compile Include="Commands\HelpCommand.cs" />
     <Compile Include="ICommand.cs" />
     <Compile Include="Commands\PrintTimeCommand.cs" />
     <Compile Include="Program_Conditionals.cs" />

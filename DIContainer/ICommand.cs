@@ -10,9 +10,10 @@ namespace DIContainer
             Name = GetType().Name.Split(new [] { ".", "Command" }, StringSplitOptions.RemoveEmptyEntries).Last();
         }
 
-        public string Name { get; private set; }
+        public string Name { get; }
 
         public abstract void Execute();
+
     }
 
     public interface ICommand
