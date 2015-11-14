@@ -18,7 +18,6 @@ namespace DIContainer
         {
             this.arguments = arguments;
             this.commands = commands;
-        
         }
 
         static void Main(string[] args)
@@ -27,8 +26,8 @@ namespace DIContainer
             container.Bind<CommandLineArgs>()
                 .ToSelf()
 //                .WithConstructorArgument(new[] { "printTime" });
-//                .WithConstructorArgument(new[] { "timer", "5000" });
-                .WithConstructorArgument(new[] { "help" });
+                .WithConstructorArgument(new[] { "timer", "2000" });
+//                .WithConstructorArgument(new[] { "help" });
             container.Bind(x =>
             {
                 x.FromThisAssembly()
