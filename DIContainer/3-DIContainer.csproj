@@ -65,6 +65,7 @@
     <Compile Include="CommandLineArgs.cs" />
     <Compile Include="ICommand.cs" />
     <Compile Include="Commands\PrintTimeCommand.cs" />
+    <Compile Include="Program_Conditionals.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Program_should.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
