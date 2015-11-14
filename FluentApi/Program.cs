@@ -17,6 +17,7 @@ namespace FluentTask
 					.Say("Aa-a-a-a-aaaaaa!!!")
 					.Say("[набирает воздух в легкие]"))
 				.Say("Ой!")
+                .Run("100m")
 				.Delay(TimeSpan.FromSeconds(1))
 				.Say("Кто здесь?!")
 				.Delay(TimeSpan.FromMilliseconds(2000));
