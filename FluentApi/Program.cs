@@ -7,7 +7,6 @@ namespace FluentTask
 		private static void Main()
 		{
 
-			/*
 			var behaviour = new Behavior()
 				.Say("Привет мир!")
 				.UntilKeyPressed(b => b
@@ -24,7 +23,7 @@ namespace FluentTask
 
 			behaviour.Execute();
 			behaviour.Execute(); // повторное выполнение сценария
-			*/
+
 
 		}
 	}
